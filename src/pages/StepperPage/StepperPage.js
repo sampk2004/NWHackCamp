@@ -6,45 +6,60 @@ import StepLabel from "@material-ui/core/StepLabel";
 import Check from "@material-ui/icons/Check";
 import clsx from "clsx";
 import styles from "./StepperPage.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/swiper.scss";
 
 function getSteps() {
   return ["Select campaign settings", "Create an ad group", "Create an ad"];
 }
 
-function QontoStepIcon(props) {
-  const { active, completed } = props;
-
-  return (
-    <div
-      className={clsx(styles.root, {
-        [styles.active]: active,
-      })}
-    >
-      {completed ? (
-        <Check className={styles.completed} />
-      ) : (
-        <div className={styles.circle} />
-      )}
-    </div>
-  );
-}
-
 function StepperPage() {
-  const [activeStep, setActiveStep] = React.useState(1);
+  const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
   return (
-    <Stepper
-      alternativeLabel
-      activeStep={activeStep}
-      connector={<StepConnector />}
+    <Swiper
+      spaceBetween={50}
+      onSlideChange={({ activeIndex }) => {
+        if (activeIndex != null) {
+          console.log({ activeIndex });
+          setActiveStep(activeIndex);
+        }
+      }}
     >
-      {steps.map((label) => (
-        <Step key={label}>
-          <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-        </Step>
-      ))}
-    </Stepper>
+      <SwiperSlide>Slide 0</SwiperSlide>
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+
+      <Stepper
+        alternativeLabel
+        activeStep={activeStep}
+        connector={<StepConnector />}
+      >
+        {steps.map((label) => (
+          <Step key={label}>
+            <StepLabel
+              StepIconComponent={({ active, completed }) => (
+                <div
+                  className={clsx(styles.root, {
+                    [styles.active]: active,
+                  })}
+                >
+                  {completed ? (
+                    <Check className={styles.completed} />
+                  ) : (
+                    <div className={styles.circle} />
+                  )}
+                </div>
+              )}
+            >
+              {label}
+            </StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+    </Swiper>
   );
 }
 
