@@ -15,10 +15,6 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 import "swiper/swiper.scss";
 
-function getSteps() {
-  return ["", "", "", ""];
-}
-
 function ImageCropper({ children }) {
   return <div className={styles.imageCropper}>{children}</div>;
 }
@@ -26,7 +22,20 @@ function ImageCropper({ children }) {
 function StepperPage() {
   const [activeStep, setActiveStep] = React.useState(0);
 
-  const steps = getSteps();
+  const orgs = [
+    {
+      name: "Green Chair Recycling",
+      desc:
+        "The volunteer team monitors recycling bins to maximize recycling, educate the public, and inspire others. Attend community events, educate attendees on proper recycling techniques, and show how easy and beneficial recycling and environmental initiatives can be.",
+      logo: <img src="/logo192.png" class="rounded" />,
+    },
+    {
+      name: "Green Chair Recycling",
+      desc:
+        "The volunteer team monitors recycling bins to maximize recycling, educate the public, and inspire others. Attend community events, educate attendees on proper recycling techniques, and show how easy and beneficial recycling and environmental initiatives can be.",
+      logo: <img src="/logo192.png" class="rounded" />,
+    },
+  ];
 
   return (
     <>
@@ -42,21 +51,18 @@ function StepperPage() {
         spaceBetween={50}
         onSlideChange={({ activeIndex }) => {
           if (activeIndex != null) {
-            console.log({ activeIndex });
             setActiveStep(activeIndex);
           }
         }}
       >
-        {steps.map((_, index) => (
-          <SwiperSlide>
+        {orgs.map(({ name, logo }) => (
+          <SwiperSlide key={name}>
             <div className={styles.orgIcon}>
               <ChevronLeftIcon />
-              <ImageCropper>
-                <img src="/logo192.png" class="rounded" />
-              </ImageCropper>
+              <ImageCropper>{logo}</ImageCropper>
               <ChevronRightIcon />
             </div>
-            Slide {index}
+            {name}
           </SwiperSlide>
         ))}
 
@@ -65,8 +71,8 @@ function StepperPage() {
           activeStep={activeStep}
           connector={<StepConnector />}
         >
-          {steps.map((label) => (
-            <Step key={label}>
+          {orgs.map(({ name }) => (
+            <Step key={name}>
               <StepLabel
                 StepIconComponent={({ active, completed }) => (
                   <div
@@ -81,9 +87,7 @@ function StepperPage() {
                     )}
                   </div>
                 )}
-              >
-                {label}
-              </StepLabel>
+              />
             </Step>
           ))}
         </Stepper>
