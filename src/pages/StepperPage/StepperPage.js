@@ -7,6 +7,9 @@ import Check from "@material-ui/icons/Check";
 import clsx from "clsx";
 import styles from "./StepperPage.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SettingsIcon from "@material-ui/icons/SettingsOutlined";
+import ViewListIcon from "@material-ui/icons/ViewListOutlined";
+import IconButton from "@material-ui/core/IconButton";
 
 import "swiper/swiper.scss";
 
@@ -20,47 +23,57 @@ function StepperPage() {
   const steps = getSteps();
 
   return (
-    <Swiper
-      spaceBetween={50}
-      onSlideChange={({ activeIndex }) => {
-        if (activeIndex != null) {
-          console.log({ activeIndex });
-          setActiveStep(activeIndex);
-        }
-      }}
-    >
-      {steps.map((_, index) => (
-        <SwiperSlide>Slide {index}</SwiperSlide>
-      ))}
-
-      <Stepper
-        alternativeLabel
-        activeStep={activeStep}
-        connector={<StepConnector />}
+    <>
+      <div className={styles.buttons}>
+        <IconButton>
+          <SettingsIcon />
+        </IconButton>
+        <IconButton>
+          <ViewListIcon />
+        </IconButton>
+      </div>
+      <Swiper
+        spaceBetween={50}
+        onSlideChange={({ activeIndex }) => {
+          if (activeIndex != null) {
+            console.log({ activeIndex });
+            setActiveStep(activeIndex);
+          }
+        }}
       >
-        {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel
-              StepIconComponent={({ active, completed }) => (
-                <div
-                  className={clsx(styles.root, {
-                    [styles.active]: active,
-                  })}
-                >
-                  {completed ? (
-                    <Check className={styles.completed} />
-                  ) : (
-                    <div className={styles.circle} />
-                  )}
-                </div>
-              )}
-            >
-              {label}
-            </StepLabel>
-          </Step>
+        {steps.map((_, index) => (
+          <SwiperSlide>Slide {index}</SwiperSlide>
         ))}
-      </Stepper>
-    </Swiper>
+
+        <Stepper
+          alternativeLabel
+          activeStep={activeStep}
+          connector={<StepConnector />}
+        >
+          {steps.map((label) => (
+            <Step key={label}>
+              <StepLabel
+                StepIconComponent={({ active, completed }) => (
+                  <div
+                    className={clsx(styles.root, {
+                      [styles.active]: active,
+                    })}
+                  >
+                    {completed ? (
+                      <Check className={styles.completed} />
+                    ) : (
+                      <div className={styles.circle} />
+                    )}
+                  </div>
+                )}
+              >
+                {label}
+              </StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+      </Swiper>
+    </>
   );
 }
 
