@@ -1,10 +1,8 @@
-import './App.css';
-import MainPage from './pages/MainPage/MainPage'
+import "./App.css";
+import StepperPage from "./pages/StepperPage/StepperPage";
 
 function App() {
-  return (
-    <MainPage />
-  );
+  return <StepperPage />;
 }
 
 export default App;
