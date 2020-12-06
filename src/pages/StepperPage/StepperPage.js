@@ -11,11 +11,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 
 function getSteps() {
-  return ["Select campaign settings", "Create an ad group", "Create an ad"];
+  return ["", "", "", ""];
 }
 
 function StepperPage() {
   const [activeStep, setActiveStep] = React.useState(0);
+
   const steps = getSteps();
 
   return (
@@ -28,9 +29,9 @@ function StepperPage() {
         }
       }}
     >
-      <SwiperSlide>Slide 0</SwiperSlide>
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
+      {steps.map((_, index) => (
+        <SwiperSlide>Slide {index}</SwiperSlide>
+      ))}
 
       <Stepper
         alternativeLabel
