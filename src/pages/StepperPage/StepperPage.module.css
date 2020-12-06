@@ -26,3 +26,17 @@
   display: flex;
   justify-content: space-between;
 }
+
+.imageCropper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.orgIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

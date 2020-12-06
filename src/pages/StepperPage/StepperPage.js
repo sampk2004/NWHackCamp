@@ -10,11 +10,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SettingsIcon from "@material-ui/icons/SettingsOutlined";
 import ViewListIcon from "@material-ui/icons/ViewListOutlined";
 import IconButton from "@material-ui/core/IconButton";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 import "swiper/swiper.scss";
 
 function getSteps() {
   return ["", "", "", ""];
+}
+
+function ImageCropper({ children }) {
+  return <div className={styles.imageCropper}>{children}</div>;
 }
 
 function StepperPage() {
@@ -42,7 +48,16 @@ function StepperPage() {
         }}
       >
         {steps.map((_, index) => (
-          <SwiperSlide>Slide {index}</SwiperSlide>
+          <SwiperSlide>
+            <div className={styles.orgIcon}>
+              <ChevronLeftIcon />
+              <ImageCropper>
+                <img src="/logo192.png" class="rounded" />
+              </ImageCropper>
+              <ChevronRightIcon />
+            </div>
+            Slide {index}
+          </SwiperSlide>
         ))}
 
         <Stepper
