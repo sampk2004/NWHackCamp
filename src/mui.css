@@ -1,0 +1,19 @@
+.MuiStepConnector-alternativeLabel {
+  top: 10;
+  left: calc(-50% + 16px);
+  right: calc(50% + 16px);
+}
+
+.MuiStepConnector-active > .MuiStepConnector-line {
+  border-color: #784af4;
+}
+
+.MuiStepConnector-completed > .MuiStepConnector-line {
+  border-color: #784af4;
+}
+
+.MuiStepConnector-line {
+  border-color: #eaeaf0;
+  border-top-width: 3;
+  border-radius: 1;
+}
