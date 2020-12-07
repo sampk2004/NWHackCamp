@@ -5,17 +5,17 @@ export default function Config() {
         name: "Green Chair Recycling ",
         url: "http://www.greenchairrecycling.com/aboutus/contact-us/",
         summary:
-          "We monitors recycling bins to maximize recycling, educate the public, and inspire others.",
+          "We monitor recycling bins to maximize recycling, educate the public, and inspire others.",
         coordinates: [49.27918, -123.09802],
         icon: "./png",
         description:
-          "Green Chair Recycling is a locally owned sustainable waste management and consulting social enterprise. We are dedicated to providing simple and effective waste reduction solutions for your event or business. Green Chair specializes in providing sustainable waste management services for events, residences and businesses throughout Metro Vancouver. We spend time with each client to provide tailored, workable solutions that strive to contribute to the circular economy. Our mission is to collaborate with the community to educate, innovate and inspire people to act and live in an environmentally socially responsible way. Our vision is a caring community where everyone strives for minimal waste and sustainable living.",
+          "Green Chair Recycling is a locally owned sustainable waste management and consulting social enterprise. We are dedicated to providing simple and effective waste reduction solutions for your event or business. Green Chair specializes in providing sustainable waste management services for events, residences and businesses throughout Metro Vancouver. We spend time with each client to provide tailored, workable solutions that strive to contribute to the circular economy.",
       },
       {
         name: "Earthsave Canada",
         url: "https://www.earthsave.ca/",
         summary:
-          "Earthsave Canada is a Vancouver, BC based charity since 1989. We advocate the move toward a more whole food, plant-based diet for environmental sustainability, better health, and compassion toward animals.",
+          "Earthsave Canada is a Vancouver, BC based charity since 1989 that advocates the move toward a more whole food, plant-based diets.",
         coordinates: [49.28369, -123.11193],
         icon: "./png",
         description:
