@@ -39,9 +39,25 @@
   font-size: 3rem !important;
 }
 
-.actions {
+.name {
+  color: green;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.desc {
+  width: 300px;
+  padding: 10px;
+}
+
+.slide {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.button {
+  padding: 10px;
 }

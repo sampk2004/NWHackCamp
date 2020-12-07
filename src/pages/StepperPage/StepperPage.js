@@ -56,18 +56,20 @@ function StepperPage() {
         }}
       >
         {orgs.map(({ name, desc, logo }) => (
-          <SwiperSlide key={name}>
+          <SwiperSlide className={styles.slide} key={name}>
             <div className={styles.orgIcon}>
               <ChevronLeftIcon className={styles.chevron} />
               <ImageCropper>{logo}</ImageCropper>
               <ChevronRightIcon className={styles.chevron} />
             </div>
-            <div>{name}</div>
-            <div>{desc}</div>
-            <div className={styles.actions}>
+            <div className={styles.name}>{name}</div>
+            <div className={styles.desc}>{desc}</div>
+            <div className={styles.button}>
               <Button variant="contained" color="primary">
                 Make a Donation
               </Button>
+            </div>
+            <div className={styles.button}>
               <Button variant="contained">Learn More</Button>
             </div>
           </SwiperSlide>
