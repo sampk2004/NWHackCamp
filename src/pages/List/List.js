@@ -1,5 +1,8 @@
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+
+import styles from "./List.module.css";
 
 function ListView() {
   const orgs = [
@@ -24,6 +27,7 @@ function ListView() {
           {logo}
           {name}
           {desc}
+          <ChevronRightIcon className={styles.chevron} />
         </ListItem>
       ))}
     </List>
