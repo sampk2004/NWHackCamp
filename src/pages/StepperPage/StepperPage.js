@@ -6,12 +6,10 @@ import StepLabel from "@material-ui/core/StepLabel";
 import clsx from "clsx";
 import styles from "./StepperPage.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SettingsIcon from "@material-ui/icons/SettingsOutlined";
-import ViewListIcon from "@material-ui/icons/ViewListOutlined";
-import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Button from "@material-ui/core/Button";
+import Header from "../../components/Header/Header";
 
 import "swiper/swiper.scss";
 
@@ -40,14 +38,7 @@ function StepperPage() {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.buttons}>
-          <IconButton>
-            <SettingsIcon />
-          </IconButton>
-          <IconButton>
-            <ViewListIcon />
-          </IconButton>
-        </div>
+        <Header />
         <Swiper
           spaceBetween={200}
           onSlideChange={({ activeIndex }) => {

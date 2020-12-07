@@ -1,8 +1,16 @@
 import "./App.css";
-import StepperPage from "./pages/StepperPage/StepperPage";
+import MockMobileBanner from "./components/MockMobileBanner/MockMobileBanner";
+import { Router } from "./Router/Router";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  return <StepperPage />;
+  return (
+    <BrowserRouter>
+      <MockMobileBanner>
+        <Router />
+      </MockMobileBanner>
+    </BrowserRouter>
+  );
 }
 
 export default App;
