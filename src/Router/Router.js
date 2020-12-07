@@ -3,6 +3,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import MapPage from "../pages/MapPage/MapPage";
 import StepperPage from "../pages/StepperPage/StepperPage";
 import List from "../pages/List/";
+import WelcomePage from "../pages/WelcomePage/WelcomePage";
+
 
 export function Router({ config }) {
   const nonprofits = config.nonprofits;
@@ -17,6 +19,7 @@ export function Router({ config }) {
       />
       <Route path="/map-view" component={MapPage} />
       <Route path="/list" component={() => List({ nonprofits })} />
+      <Route path="/welcome-page" component={WelcomePage} />
     </Switch>
   );
 }
