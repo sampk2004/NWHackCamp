@@ -16,7 +16,7 @@ function ListView({ nonprofits }) {
             <img className={styles.icon} src="/list/green_chair.png" />
             <div className={styles.text}>
               <Typography className={styles.name}>{name}</Typography>
-              <Typography>{summary}</Typography>
+              <Typography className={styles.summary}>{summary}</Typography>
             </div>
             <ChevronRightIcon className={styles.chevron} />
           </ListItem>
