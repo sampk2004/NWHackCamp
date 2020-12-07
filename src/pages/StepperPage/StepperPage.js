@@ -1,17 +1,17 @@
 import React from "react";
+import clsx from "clsx";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Stepper from "@material-ui/core/Stepper";
 import StepConnector from "@material-ui/core/StepConnector";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
-import clsx from "clsx";
-import styles from "./StepperPage.module.css";
-import { Swiper, SwiperSlide } from "swiper/react";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Button from "@material-ui/core/Button";
-import Header from "../../components/Header/Header";
-
 import "swiper/swiper.scss";
+
+import Header from "../../components/Header/Header";
+import styles from "./StepperPage.module.css";
 
 function ImageCropper({ children }) {
   return <div className={styles.imageCropper}>{children}</div>;
