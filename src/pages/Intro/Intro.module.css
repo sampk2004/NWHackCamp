@@ -70,3 +70,24 @@
   /* But also accounting for potential margin-bottom of last child */
   margin-bottom: -124px;
 }
+
+.one {
+  padding-top: 40px;
+}
+
+.two {
+  padding-top: 40px;
+}
+
+.three {
+  padding-top: 40px;
+}
+
+.four {
+  padding-top: 40px;
+}
+
+.introContainer {
+  display: flex;
+  justify-content: center;
+}

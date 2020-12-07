@@ -13,7 +13,22 @@ import styles from "./Intro.module.css";
 function Intro({ nonprofits }) {
   const [activeStep, setActiveStep] = React.useState(0);
 
-  const pages = ["", "", "", ""];
+  const pages = [
+    <div className={styles.introContainer}>
+      <img className={styles.one} src="/intro/1.png" />
+    </div>,
+
+    <div className={styles.introContainer}>
+      <img className={styles.two} src="/intro/2.png" />
+    </div>,
+
+    <div className={styles.introContainer}>
+      <img className={styles.three} src="/intro/3.png" />
+    </div>,
+    <div className={styles.introContainer}>
+      <img className={styles.four} src="/intro/4.png" />
+    </div>,
+  ];
 
   return (
     <div className={styles.container}>
@@ -26,9 +41,13 @@ function Intro({ nonprofits }) {
             }
           }}
         >
-          {pages.map((page, index) => (
-            <SwiperSlide>Page {index}</SwiperSlide>
-          ))}
+          {pages.map((page, index) =>
+            page ? (
+              <SwiperSlide>{page}</SwiperSlide>
+            ) : (
+              <SwiperSlide>Page {index}</SwiperSlide>
+            )
+          )}
         </Swiper>
         <div class="push"></div>
       </div>
