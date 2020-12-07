@@ -4,29 +4,14 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 import styles from "./List.module.css";
 
-function ListView() {
-  const orgs = [
-    {
-      name: "Green Chair Recycling",
-      desc:
-        "The volunteer team monitors recycling bins to maximize recycling, educate the public, and inspire others. Attend community events, educate attendees on proper recycling techniques, and show how easy and beneficial recycling and environmental initiatives can be.",
-      logo: <img src="/logo192.png" class="rounded" />,
-    },
-    {
-      name: "Green Chair Recycling",
-      desc:
-        "The volunteer team monitors recycling bins to maximize recycling, educate the public, and inspire others. Attend community events, educate attendees on proper recycling techniques, and show how easy and beneficial recycling and environmental initiatives can be.",
-      logo: <img src="/logo192.png" class="rounded" />,
-    },
-  ];
-
+function ListView({ nonprofits }) {
   return (
     <List>
-      {orgs.map(({ name, desc, logo }) => (
+      {nonprofits.map(({ name, summary, logo }) => (
         <ListItem>
-          {logo}
+          <img className={styles.icon} src="/logo192.png" />
           {name}
-          {desc}
+          {summary}
           <ChevronRightIcon className={styles.chevron} />
         </ListItem>
       ))}

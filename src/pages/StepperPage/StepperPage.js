@@ -37,7 +37,7 @@ function StepperPage({ nonprofits }) {
               <div className={styles.orgIcon}>
                 <ChevronLeftIcon className={styles.chevron} />
                 <ImageCropper>
-                  <img src="/logo192.png" class="rounded" />
+                  <img src="/logo192.png" />
                 </ImageCropper>
                 <ChevronRightIcon className={styles.chevron} />
               </div>
