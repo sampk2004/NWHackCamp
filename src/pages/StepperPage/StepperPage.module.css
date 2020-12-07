@@ -35,6 +35,10 @@
   align-items: center;
 }
 
+.chevron {
+  font-size: 3rem !important;
+}
+
 .actions {
   display: flex;
   flex-direction: column;
