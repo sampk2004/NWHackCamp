@@ -11,18 +11,14 @@ function Header({ children }) {
     history.push("/map-view");
   };
   return (
-    <>
-      <img src="/header.png" className={styles.header} alt="image" />
-      <div className={styles.buttonContainer}>
+    <div className={styles.buttonContainer}>
       <IconButton>
-          <SettingsIcon />
-        </IconButton>
-        <IconButton onClick={gotoMaps}>
-          <ViewListIcon />
-        </IconButton>
-      </div>
-      {children}
-    </>
+        <SettingsIcon />
+      </IconButton>
+      <IconButton onClick={gotoMaps}>
+        <ViewListIcon />
+      </IconButton>
+    </div>
   );
 }
 

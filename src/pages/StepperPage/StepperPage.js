@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Button from "@material-ui/core/Button";
+import Header from "../../components/Header/Header";
 
 import "swiper/swiper.scss";
 
@@ -24,18 +25,19 @@ function StepperPage() {
       name: "Green Chair Recycling",
       desc:
         "The volunteer team monitors recycling bins to maximize recycling, educate the public, and inspire others. Attend community events, educate attendees on proper recycling techniques, and show how easy and beneficial recycling and environmental initiatives can be.",
-      logo: <img src="/logo192.png" class="rounded" />,
+      logo: <img src="/logo192.png" class="rounded" />
     },
     {
       name: "Green Chair Recycling",
       desc:
         "The volunteer team monitors recycling bins to maximize recycling, educate the public, and inspire others. Attend community events, educate attendees on proper recycling techniques, and show how easy and beneficial recycling and environmental initiatives can be.",
-      logo: <img src="/logo192.png" class="rounded" />,
-    },
+      logo: <img src="/logo192.png" class="rounded" />
+    }
   ];
 
   return (
     <>
+      <Header />
       <Swiper
         spaceBetween={200}
         onSlideChange={({ activeIndex }) => {
@@ -74,7 +76,7 @@ function StepperPage() {
                   <div className={styles.root}>
                     <div
                       className={clsx(styles.circle, {
-                        [styles.active]: active,
+                        [styles.active]: active
                       })}
                     />
                   </div>
