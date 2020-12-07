@@ -11,7 +11,7 @@ export default function WelcomePage() {
       <br />
       <br />
       <div className={styles.welcome}>
-        <ButtonStyled buttonName={"View Local Organization"} location={"/welcome-page"}/>
+        <ButtonStyled buttonName={"View Local Organization"} location={"./main-page"}/>
       </div>
     </>
   );

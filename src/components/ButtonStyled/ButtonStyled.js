@@ -6,11 +6,15 @@ import Button from '@material-ui/core/Button';
 export default function ButtonStyled({ location, buttonName }) {
   const history = useHistory();
 
+  const gotoMaps = () => {
+    history.push(location);
+  };
+
   return (
     <Button
       variant="contained"
       className={styles.buttonContainer}
-      onClick={() => history.useHistory(location)}
+      onClick={gotoMaps}
     >{buttonName}</Button>
   );
 }
