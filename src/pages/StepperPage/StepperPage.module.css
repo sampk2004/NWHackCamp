@@ -34,9 +34,39 @@
   font-size: 3rem !important;
 }
 
-.actions {
+.name {
+  color: var(--main-accent-color);
+  font-size: 2rem;
+  padding: 10px;
+  font-weight: 800;
+}
+
+.desc {
+  width: 300px;
+  padding: 10px;
+}
+
+.slide {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.button {
+  padding: 10px;
+}
+
+.container {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -114px;
 }
