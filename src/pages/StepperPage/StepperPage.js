@@ -48,7 +48,7 @@ function StepperPage() {
         </IconButton>
       </div>
       <Swiper
-        spaceBetween={50}
+        spaceBetween={200}
         onSlideChange={({ activeIndex }) => {
           if (activeIndex != null) {
             setActiveStep(activeIndex);
