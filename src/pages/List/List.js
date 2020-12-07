@@ -16,10 +16,10 @@ function ListView({ nonprofits }) {
           <>
             {index > 0 && <Divider />}
             <ListItem className={styles.listItem}>
-              <img className={styles.icon} src="/logo192.png" />
+              <img className={styles.icon} src="/list/green_chair.png" />
               <div className={styles.text}>
                 <Typography className={styles.name}>{name}</Typography>
-                <Typography>{summary}</Typography>
+                <Typography className={styles.summary}>{summary}</Typography>
               </div>
               <ChevronRightIcon className={styles.chevron} />
             </ListItem>
@@ -29,4 +29,5 @@ function ListView({ nonprofits }) {
     </>
   );
 }
+
 export default ListView;

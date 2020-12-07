@@ -4,6 +4,7 @@
 
 .icon {
   height: 81px;
+  padding: 3px;
 }
 
 .text {
@@ -16,6 +17,10 @@
   color: var(--main-accent-color);
   font-weight: 800 !important;
   font-size: 22px !important;
+}
+
+.summary {
+  font-size: 13px !important;
 }
 
 .listItem {

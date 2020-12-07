@@ -1,0 +1,93 @@
+.root {
+  color: #eaeaf0;
+  display: flex;
+  height: 22px;
+  align-items: center;
+}
+
+.active {
+  color: #a1a2a3;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.imageCropper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.orgIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chevron {
+  font-size: 3rem !important;
+}
+
+.name {
+  color: var(--main-accent-color);
+  font-size: 2rem;
+  padding: 10px;
+  font-weight: 800;
+}
+
+.desc {
+  width: 300px;
+  padding: 10px;
+}
+
+.slide {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  padding: 10px;
+}
+
+.container {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -124px;
+}
+
+.one {
+  padding-top: 40px;
+}
+
+.two {
+  padding-top: 40px;
+}
+
+.three {
+  padding-top: 40px;
+}
+
+.four {
+  padding-top: 40px;
+}
+
+.introContainer {
+  display: flex;
+  justify-content: center;
+}

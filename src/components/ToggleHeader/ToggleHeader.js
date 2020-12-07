@@ -41,7 +41,7 @@ export default function ToggleHeader() {
           <ToggleButton
             className={styles.toggleButtonRight}
             value="List"
-            onClick={() => history.push("/list-view")}
+            onClick={() => history.push("/list")}
           >
             List
           </ToggleButton>
