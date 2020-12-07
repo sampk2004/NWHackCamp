@@ -1,9 +1,17 @@
 import "./App.css";
 import "./mui.css";
-import StepperPage from "./pages/StepperPage/StepperPage";
+import Header from "./components/Header/Header";
+import { Router } from "./Router/Router";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  return <StepperPage />;
+  return (
+    <BrowserRouter>
+      <Header>
+        <Router />
+      </Header>
+    </BrowserRouter>
+  );
 }
 
 export default App;
