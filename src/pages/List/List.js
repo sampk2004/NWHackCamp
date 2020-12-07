@@ -13,7 +13,7 @@ function ListView({ nonprofits }) {
         <>
           {index > 0 && <Divider />}
           <ListItem className={styles.listItem}>
-            <img className={styles.icon} src="/logo192.png" />
+            <img className={styles.icon} src="/list/green_chair.png" />
             <div className={styles.text}>
               <Typography className={styles.name}>{name}</Typography>
               <Typography>{summary}</Typography>
