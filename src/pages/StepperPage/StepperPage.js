@@ -54,14 +54,15 @@ function StepperPage() {
           }
         }}
       >
-        {orgs.map(({ name, logo }) => (
+        {orgs.map(({ name, desc, logo }) => (
           <SwiperSlide key={name}>
             <div className={styles.orgIcon}>
               <ChevronLeftIcon />
               <ImageCropper>{logo}</ImageCropper>
               <ChevronRightIcon />
             </div>
-            {name}
+            <div>{name}</div>
+            <div>{desc}</div>
           </SwiperSlide>
         ))}
 
