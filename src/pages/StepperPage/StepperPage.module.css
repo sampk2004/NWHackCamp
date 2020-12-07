@@ -6,7 +6,7 @@
 }
 
 .active {
-  color: #784af4;
+  color: #a1a2a3;
 }
 
 .circle {
@@ -16,8 +16,32 @@
   background-color: currentColor;
 }
 
-.completed {
-  color: #784af4;
-  z-index: 1;
-  font-size: 18px;
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imageCropper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.orgIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chevron {
+  font-size: 3rem !important;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
