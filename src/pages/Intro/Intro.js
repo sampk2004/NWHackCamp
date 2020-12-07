@@ -18,7 +18,6 @@ function Intro({ nonprofits }) {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <Header />
         <Swiper
           spaceBetween={200}
           onSlideChange={({ activeIndex }) => {
