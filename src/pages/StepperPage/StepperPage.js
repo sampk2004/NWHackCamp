@@ -17,23 +17,8 @@ function ImageCropper({ children }) {
   return <div className={styles.imageCropper}>{children}</div>;
 }
 
-function StepperPage() {
+function StepperPage({ nonprofits }) {
   const [activeStep, setActiveStep] = React.useState(0);
-
-  const orgs = [
-    {
-      name: "Green Chair Recycling",
-      desc:
-        "The volunteer team monitors recycling bins to maximize recycling, educate the public, and inspire others. Attend community events, educate attendees on proper recycling techniques, and show how easy and beneficial recycling and environmental initiatives can be.",
-      logo: <img src="/logo192.png" class="rounded" />,
-    },
-    {
-      name: "Green Chair Recycling",
-      desc:
-        "The volunteer team monitors recycling bins to maximize recycling, educate the public, and inspire others. Attend community events, educate attendees on proper recycling techniques, and show how easy and beneficial recycling and environmental initiatives can be.",
-      logo: <img src="/logo192.png" class="rounded" />,
-    },
-  ];
 
   return (
     <div className={styles.container}>
@@ -47,15 +32,17 @@ function StepperPage() {
             }
           }}
         >
-          {orgs.map(({ name, desc, logo }) => (
+          {nonprofits.map(({ name, description, logo }) => (
             <SwiperSlide className={styles.slide} key={name}>
               <div className={styles.orgIcon}>
                 <ChevronLeftIcon className={styles.chevron} />
-                <ImageCropper>{logo}</ImageCropper>
+                <ImageCropper>
+                  <img src="/logo192.png" class="rounded" />
+                </ImageCropper>
                 <ChevronRightIcon className={styles.chevron} />
               </div>
               <div className={styles.name}>{name}</div>
-              <div className={styles.desc}>{desc}</div>
+              <div className={styles.desc}>{description}</div>
               <div className={styles.button}>
                 <Button variant="contained" color="primary">
                   Make a Donation
@@ -75,10 +62,10 @@ function StepperPage() {
         connector={<StepConnector />}
         className={styles.footer}
       >
-        {orgs.map(({ name }) => (
+        {nonprofits.map(({ name }) => (
           <Step key={name}>
             <StepLabel
-              StepIconComponent={({ active, completed }) => (
+              StepIconComponent={({ active }) => (
                 <div className={styles.root}>
                   <div
                     className={clsx(styles.circle, {
