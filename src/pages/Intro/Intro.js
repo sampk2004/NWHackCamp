@@ -9,6 +9,7 @@ import "swiper/swiper.scss";
 
 import Header from "../../components/Header/Header";
 import styles from "./Intro.module.css";
+import ButtonStyled from "../../components/ButtonStyled/ButtonStyled";
 
 function Intro({ nonprofits }) {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -27,6 +28,9 @@ function Intro({ nonprofits }) {
     </div>,
     <div className={styles.introContainer}>
       <img className={styles.four} src="/intro/4.png" />
+      <div>
+        <ButtonStyled buttonName={"Get Started"} location={"/welcome-page"} />
+      </div>
     </div>,
   ];
 
