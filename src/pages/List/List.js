@@ -1,5 +1,7 @@
+import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import Typography from "@material-ui/core/Typography";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 import ToggleHeader from "../../components/ToggleHeader/ToggleHeader";
@@ -10,13 +12,18 @@ function ListView({ nonprofits }) {
     <>
       <ToggleHeader />
       <List>
-        {nonprofits.map(({ name, summary, logo }) => (
-          <ListItem>
-            <img className={styles.icon} src="/logo192.png" />
-            {name}
-            {summary}
-            <ChevronRightIcon className={styles.chevron} />
-          </ListItem>
+        {nonprofits.map(({ name, summary, logo }, index) => (
+          <>
+            {index > 0 && <Divider />}
+            <ListItem className={styles.listItem}>
+              <img className={styles.icon} src="/logo192.png" />
+              <div className={styles.text}>
+                <Typography className={styles.name}>{name}</Typography>
+                <Typography>{summary}</Typography>
+              </div>
+              <ChevronRightIcon className={styles.chevron} />
+            </ListItem>
+          </>
         ))}
       </List>
     </>

@@ -16,7 +16,7 @@ export function Router({ config }) {
         component={() => StepperPage({ nonprofits })}
       />
       <Route path="/map-view" component={MapPage} />
-      <Route path="/list-view" component={() => List({ nonprofits })} />
+      <Route path="/list" component={() => List({ nonprofits })} />
     </Switch>
   );
 }
