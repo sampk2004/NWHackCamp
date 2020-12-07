@@ -16,11 +16,6 @@
   background-color: currentColor;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
 .imageCropper {
   width: 200px;
   height: 200px;

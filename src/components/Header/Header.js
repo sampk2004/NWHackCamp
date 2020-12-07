@@ -1,8 +1,8 @@
 import styles from "./Header.module.css";
-import { IconButton } from "@material-ui/core";
-import SettingsIcon from "@material-ui/icons/Settings";
-import MapIcon from "@material-ui/icons/Map";
-import { Switch, useHistory } from "react-router-dom";
+import SettingsIcon from "@material-ui/icons/SettingsOutlined";
+import ViewListIcon from "@material-ui/icons/ViewListOutlined";
+import IconButton from "@material-ui/core/IconButton";
+import { useHistory } from "react-router-dom";
 
 function Header({ children }) {
   const history = useHistory();
@@ -14,11 +14,11 @@ function Header({ children }) {
     <>
       <img src="/header.png" className={styles.header} alt="image" />
       <div className={styles.buttonContainer}>
-        <IconButton>
+      <IconButton>
           <SettingsIcon />
         </IconButton>
         <IconButton onClick={gotoMaps}>
-          <MapIcon />
+          <ViewListIcon />
         </IconButton>
       </div>
       {children}
