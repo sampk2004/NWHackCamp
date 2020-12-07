@@ -40,9 +40,10 @@
 }
 
 .name {
-  color: green;
+  color: var(--main-accent-color);
   font-size: 2rem;
   padding: 10px;
+  font-weight: 800;
 }
 
 .desc {

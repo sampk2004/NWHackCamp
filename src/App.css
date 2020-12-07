@@ -41,3 +41,7 @@
   height: 100%;
   margin: 0;
 }
+
+.MuiButton-containedPrimary {
+  background-color: var(--main-accent-color) !important;
+}

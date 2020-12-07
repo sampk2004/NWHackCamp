@@ -71,7 +71,7 @@ function StepperPage() {
                 </Button>
               </div>
               <div className={styles.button}>
-                <Button variant="contained">Learn More</Button>
+                <Button variant="outlined">Learn More</Button>
               </div>
             </SwiperSlide>
           ))}
