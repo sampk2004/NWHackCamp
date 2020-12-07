@@ -68,10 +68,5 @@
 
   /* Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -70px;
-}
-
-.footer,
-.push {
-  height: 70px;
+  margin-bottom: -114px;
 }
