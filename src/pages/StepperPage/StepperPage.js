@@ -38,66 +38,69 @@ function StepperPage() {
   ];
 
   return (
-    <>
-      <div className={styles.buttons}>
-        <IconButton>
-          <SettingsIcon />
-        </IconButton>
-        <IconButton>
-          <ViewListIcon />
-        </IconButton>
-      </div>
-      <Swiper
-        spaceBetween={200}
-        onSlideChange={({ activeIndex }) => {
-          if (activeIndex != null) {
-            setActiveStep(activeIndex);
-          }
-        }}
-      >
-        {orgs.map(({ name, desc, logo }) => (
-          <SwiperSlide className={styles.slide} key={name}>
-            <div className={styles.orgIcon}>
-              <ChevronLeftIcon className={styles.chevron} />
-              <ImageCropper>{logo}</ImageCropper>
-              <ChevronRightIcon className={styles.chevron} />
-            </div>
-            <div className={styles.name}>{name}</div>
-            <div className={styles.desc}>{desc}</div>
-            <div className={styles.button}>
-              <Button variant="contained" color="primary">
-                Make a Donation
-              </Button>
-            </div>
-            <div className={styles.button}>
-              <Button variant="contained">Learn More</Button>
-            </div>
-          </SwiperSlide>
-        ))}
-
-        <Stepper
-          alternativeLabel
-          activeStep={activeStep}
-          connector={<StepConnector />}
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <div className={styles.buttons}>
+          <IconButton>
+            <SettingsIcon />
+          </IconButton>
+          <IconButton>
+            <ViewListIcon />
+          </IconButton>
+        </div>
+        <Swiper
+          spaceBetween={200}
+          onSlideChange={({ activeIndex }) => {
+            if (activeIndex != null) {
+              setActiveStep(activeIndex);
+            }
+          }}
         >
-          {orgs.map(({ name }) => (
-            <Step key={name}>
-              <StepLabel
-                StepIconComponent={({ active, completed }) => (
-                  <div className={styles.root}>
-                    <div
-                      className={clsx(styles.circle, {
-                        [styles.active]: active,
-                      })}
-                    />
-                  </div>
-                )}
-              />
-            </Step>
+          {orgs.map(({ name, desc, logo }) => (
+            <SwiperSlide className={styles.slide} key={name}>
+              <div className={styles.orgIcon}>
+                <ChevronLeftIcon className={styles.chevron} />
+                <ImageCropper>{logo}</ImageCropper>
+                <ChevronRightIcon className={styles.chevron} />
+              </div>
+              <div className={styles.name}>{name}</div>
+              <div className={styles.desc}>{desc}</div>
+              <div className={styles.button}>
+                <Button variant="contained" color="primary">
+                  Make a Donation
+                </Button>
+              </div>
+              <div className={styles.button}>
+                <Button variant="contained">Learn More</Button>
+              </div>
+            </SwiperSlide>
           ))}
-        </Stepper>
-      </Swiper>
-    </>
+        </Swiper>
+        <div class="push"></div>
+      </div>
+      <Stepper
+        alternativeLabel
+        activeStep={activeStep}
+        connector={<StepConnector />}
+        className={styles.footer}
+      >
+        {orgs.map(({ name }) => (
+          <Step key={name}>
+            <StepLabel
+              StepIconComponent={({ active, completed }) => (
+                <div className={styles.root}>
+                  <div
+                    className={clsx(styles.circle, {
+                      [styles.active]: active,
+                    })}
+                  />
+                </div>
+              )}
+            />
+          </Step>
+        ))}
+      </Stepper>
+    </div>
   );
 }
 
