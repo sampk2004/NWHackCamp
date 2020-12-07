@@ -2,15 +2,15 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import IconButton from "@material-ui/core/IconButton";
-import Grid from '@material-ui/core/Grid';
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import Grid from "@material-ui/core/Grid";
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import styles from "./ToggleHeader.module.css";
 
 export default function ToggleHeader() {
   const history = useHistory();
 
-  const [alignment, setAlignment] = React.useState('left');
+  const [alignment, setAlignment] = React.useState("left");
 
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
@@ -31,10 +31,18 @@ export default function ToggleHeader() {
           exclusive
           onChange={handleChange}
         >
-          <ToggleButton className={styles.toggleButtonLeft} value="Map">
+          <ToggleButton
+            className={styles.toggleButtonLeft}
+            value="Map"
+            onClick={() => history.push("/map-view")}
+          >
             Map
           </ToggleButton>
-          <ToggleButton className={styles.toggleButtonRight} value="List">
+          <ToggleButton
+            className={styles.toggleButtonRight}
+            value="List"
+            onClick={() => history.push("/list")}
+          >
             List
           </ToggleButton>
         </ToggleButtonGroup>
