@@ -11,6 +11,7 @@ import ViewListIcon from "@material-ui/icons/ViewListOutlined";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import Button from "@material-ui/core/Button";
 
 import "swiper/swiper.scss";
 
@@ -63,6 +64,12 @@ function StepperPage() {
             </div>
             <div>{name}</div>
             <div>{desc}</div>
+            <div className={styles.actions}>
+              <Button variant="contained" color="primary">
+                Make a Donation
+              </Button>
+              <Button variant="contained">Learn More</Button>
+            </div>
           </SwiperSlide>
         ))}
 
