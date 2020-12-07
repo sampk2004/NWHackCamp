@@ -6,7 +6,7 @@
 }
 
 .active {
-  color: #784af4;
+  color: #a1a2a3;
 }
 
 .circle {
@@ -14,12 +14,6 @@
   height: 8px;
   border-radius: 50%;
   background-color: currentColor;
-}
-
-.completed {
-  color: #784af4;
-  z-index: 1;
-  font-size: 18px;
 }
 
 .buttons {

@@ -3,7 +3,6 @@ import Stepper from "@material-ui/core/Stepper";
 import StepConnector from "@material-ui/core/StepConnector";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
-import Check from "@material-ui/icons/Check";
 import clsx from "clsx";
 import styles from "./StepperPage.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -75,16 +74,12 @@ function StepperPage() {
             <Step key={name}>
               <StepLabel
                 StepIconComponent={({ active, completed }) => (
-                  <div
-                    className={clsx(styles.root, {
-                      [styles.active]: active,
-                    })}
-                  >
-                    {completed ? (
-                      <Check className={styles.completed} />
-                    ) : (
-                      <div className={styles.circle} />
-                    )}
+                  <div className={styles.root}>
+                    <div
+                      className={clsx(styles.circle, {
+                        [styles.active]: active,
+                      })}
+                    />
                   </div>
                 )}
               />
